@@ -10,6 +10,8 @@
 #include "engine/math_util.h"
 #include "rumble_init.h"
 
+#include "mods/mod_loader.h"
+
 /**
  * Used by act_punching() to determine Mario's forward velocity during each
  * animation frame.
@@ -465,6 +467,8 @@ s32 mario_execute_object_action(struct MarioState *m) {
     if (mario_update_quicksand(m, 0.5f)) {
         return TRUE;
     }
+
+    ml_update_character_mods_object();
 
     /* clang-format off */
     switch (m->action) {

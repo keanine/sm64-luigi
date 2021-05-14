@@ -17,6 +17,8 @@
 #include "level_table.h"
 #include "rumble_init.h"
 
+#include "mods/mod_loader.h"
+
 #define MIN_SWIM_STRENGTH 160
 #define MIN_SWIM_SPEED 16.0f
 
@@ -1531,6 +1533,8 @@ s32 mario_execute_submerged_action(struct MarioState *m) {
 
     m->marioBodyState->headAngle[1] = 0;
     m->marioBodyState->headAngle[2] = 0;
+
+    ml_update_character_mods_submerged();
 
     /* clang-format off */
     switch (m->action) {

@@ -17,6 +17,8 @@
 #include "surface_terrains.h"
 #include "rumble_init.h"
 
+#include "mods/mod_loader.h"
+
 s32 check_common_idle_cancels(struct MarioState *m) {
     mario_drop_held_object(m);
     if (m->floor->normal.y < 0.29237169f) {
@@ -1113,6 +1115,8 @@ s32 mario_execute_stationary_action(struct MarioState *m) {
     if (mario_update_quicksand(m, 0.5f)) {
         return TRUE;
     }
+
+    ml_update_character_mods_stationary();
 
     /* clang-format off */
     switch (m->action) {

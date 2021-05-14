@@ -97,6 +97,7 @@ SECTIONS
 #ifdef VERSION_SH
       BUILD_DIR/src/game/rumble_init.o(.text);
 #endif
+	  BUILD_DIR/src/mods*(.text);
       BUILD_DIR/src/game/level_update.o(.text);
       BUILD_DIR/src/game/interaction.o(.text);
       BUILD_DIR/src/game/mario.o(.text);
@@ -424,6 +425,7 @@ SECTIONS
 #ifdef VERSION_SH
       BUILD_DIR/src/game/rumble_init.o(.data*);
 #endif
+	  BUILD_DIR/src/mods*(.data*);
       BUILD_DIR/src/game/level_update.o(.data*);
       BUILD_DIR/src/game/interaction.o(.data*);
       BUILD_DIR/src/game/mario.o(.data*);
@@ -532,6 +534,7 @@ SECTIONS
       BUILD_DIR/src/game/main.o(.rodata*);
       BUILD_DIR/src/game/game_init.o(.rodata*);
       BUILD_DIR/src/game/sound_init.o(.rodata*);
+	  BUILD_DIR/src/mods*(.rodata*);
       BUILD_DIR/src/game/level_update.o(.rodata*);
       BUILD_DIR/src/game/interaction.o(.rodata*);
       BUILD_DIR/src/game/mario.o(.rodata*);
@@ -634,6 +637,7 @@ SECTIONS
 #ifdef VERSION_SH
       BUILD_DIR/src/game/rumble_init.o(.bss*);
 #endif
+	  BUILD_DIR/src/mods*(.bss*);
       BUILD_DIR/src/game/level_update.o(.bss*);
       BUILD_DIR/src/game/interaction.o(.bss*);
       BUILD_DIR/src/game/mario.o(.bss*);

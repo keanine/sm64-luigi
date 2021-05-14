@@ -28,6 +28,8 @@
 #include "sound_init.h"
 #include "rumble_init.h"
 
+#include "mods/mod_loader.h"
+
 // TODO: put this elsewhere
 enum SaveOption { SAVE_OPT_SAVE_AND_CONTINUE = 1, SAVE_OPT_SAVE_AND_QUIT, SAVE_OPT_CONTINUE_DONT_SAVE };
 
@@ -2691,6 +2693,8 @@ s32 mario_execute_cutscene_action(struct MarioState *m) {
     if (check_for_instant_quicksand(m)) {
         return TRUE;
     }
+
+    ml_update_character_mods_cutscene();
 
     /* clang-format off */
     switch (m->action) {
